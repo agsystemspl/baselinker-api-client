@@ -1,0 +1,25 @@
+{
+    "name": "agsystemspl/baselinker-api-client",
+    "description": "Baselinker API Client",
+    "keywords": ["besalinker", "api"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Paweł Feruś",
+            "email": "mindc@o2.pl"
+        }
+    ],
+    "type": "library",
+    "require": {
+		"php": ">=7.0",
+        "guzzlehttp/guzzle": "~6.0"
+    },
+    "require-dev": {
+        "vlucas/phpdotenv": "^2.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "AGSystems\\Baselinker\\API\\": "src/"
+        }
+    }
+}
