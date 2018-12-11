@@ -16,15 +16,22 @@ class Client
     {
         $client = new \GuzzleHttp\Client();
 
+        $form_params = [
+            'token' => $this->accessToken,
+            'method' => $name,
+        ];
+
+        if($parameters = array_shift($arguments)){
+            $form_params += [
+                'parameters' => json_encode($parameters),
+            ];
+        }
+
         $response = $client->request('POST', $this->connector, [
-            'form_params' => [
-                'token' => $this->accessToken,
-                'method' => $name,
-                'parameters' => array_shift($arguments),
-            ],
+            'form_params' => $form_params,
         ]);
 
-        $result = json_decode($response);
+        $result = json_decode($response->getBody()->getContents());
 
         return $result;
     }

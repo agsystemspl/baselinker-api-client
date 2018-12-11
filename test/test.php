@@ -10,4 +10,13 @@ $client = new \AGSystems\Baselinker\API\Client(
 );
 
 
-var_export($client->getCategories());
+var_export(
+    $client->getStoragesList()
+);
+
+var_export(
+    $client->getCategories([
+        'storage_id' => 1
+    ])
+);
+
