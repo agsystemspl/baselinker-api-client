@@ -12,6 +12,7 @@
     "type": "library",
     "require": {
 		"php": ">=7.0",
+        "ext-json": "*",
         "guzzlehttp/guzzle": "~6.0"
     },
     "require-dev": {

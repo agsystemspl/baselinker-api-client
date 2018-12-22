@@ -21,7 +21,7 @@ class Client
             'method' => $name,
         ];
 
-        if($parameters = array_shift($arguments)){
+        if ($parameters = array_shift($arguments)) {
             $form_params += [
                 'parameters' => json_encode($parameters),
             ];
