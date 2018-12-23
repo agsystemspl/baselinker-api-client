@@ -36,7 +36,7 @@ namespace AGSystems\Baselinker\API;
  * @method mixed getCourierAccounts(array $parameters)
  * @method mixed getLabel(array $parameters)
  * @method mixed getOrderPackages(array $parameters)
- * @method mixed getCourierPackagesStatusHistory
+ * @method mixed getCourierPackagesStatusHistory(array $parameters)
  */
 class Client
 {
