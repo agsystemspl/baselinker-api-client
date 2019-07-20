@@ -28,6 +28,8 @@ namespace AGSystems\Baselinker\API;
  * @method mixed setOrderStatus(array $parameters)
  * @method mixed setOrderReceipt(array $parameters)
  *
+ * @method setOrderProductFields(array $parameters)
+ *
  * @method mixed createPackage(array $parameters)
  * @method mixed createPackageManual(array $parameters)
  * @method mixed getCouriersList()
