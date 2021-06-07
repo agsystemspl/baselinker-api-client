@@ -45,15 +45,17 @@ class Client
     protected $connector = 'https://api.baselinker.com/connector.php';
     protected $accessToken;
 
-    public function __construct($accessToken)
+    public function __construct($accessToken, $client = null)
     {
+        if (is_null($client))
+            $client = new \GuzzleHttp\Client();
+
+        $this->client = $client;
         $this->accessToken = $accessToken;
     }
 
     public function __call($name, $arguments)
     {
-        $client = new \GuzzleHttp\Client();
-
         $form_params = [
             'token' => $this->accessToken,
             'method' => $name,
@@ -65,7 +67,7 @@ class Client
             ];
         }
 
-        $response = $client->request('POST', $this->connector, [
+        $response = $this->client->request('POST', $this->connector, [
             'form_params' => $form_params,
         ]);
 
