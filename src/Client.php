@@ -79,8 +79,9 @@ namespace AGSystems\Baselinker\API;
  */
 class Client
 {
-    protected $connector = 'https://api.baselinker.com/connector.php';
-    protected $accessToken;
+    protected string $connector = 'https://api.baselinker.com/connector.php';
+    protected string $accessToken;
+    protected \GuzzleHttp\Client $client;
 
     public function __construct($accessToken, $client = null)
     {
